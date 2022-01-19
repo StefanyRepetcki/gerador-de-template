@@ -45,6 +45,10 @@ yarn mock
 ```
 git checkout develop
 vue create --preset ./gerador-de-template my-project
+
+ou
+
+vue create --preset ./gerador-de-template my-project --packageManager npm
 ```
 
 ## Leia mais

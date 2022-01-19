@@ -225,7 +225,7 @@ module.exports = (api, {
                     "core-js": "^3.6.5",
                     "roboto-fontface": "*",
                     "vue": "^3.2.2",
-                    "vuetify": "^3.0.0-alpha.12"
+                    "vuetify": "^2.3.13"
                 },
                 devDependencies: {
                     "@vitejs/plugin-vue": "^1.1.5",
@@ -251,25 +251,6 @@ module.exports = (api, {
                     "lint": "vue-cli-service lint",
                     "dev": "vite"
                 },
-                eslintConfig: {
-                    "root": true,
-                    "env": {
-                        "node": true
-                    },
-                    "extends": [
-                        "plugin:vue/vue3-recommended",
-                        "eslint:recommended"
-                    ],
-                    "parserOptions": {
-                        "parser": "babel-eslint"
-                    },
-                    "rules": {}
-                },
-                browserslist: [
-                    "> 1%",
-                    "last 2 versions",
-                    "not dead"
-                ]
             });
             break;
         case 'projeto':
@@ -366,7 +347,7 @@ module.exports = (api, {
                     "vue-template-compiler": "^2.6.14",
                     "vuetify-loader": "^1.7.3",
                     "webfontloader": "^1.6.28",
-                    "webpack": "^5.52.0"
+                    "webpack" : "5.61.0"
                 },
                 scripts: {
                     "serve": "vue-cli-service serve",
