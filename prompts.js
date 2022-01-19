@@ -5,7 +5,11 @@ module.exports = [
         message: 'Qual template você deseja usar?',
         choices: [
             {
-                name: 'Crud (Recomendado)',
+                name: 'crud-vue-js',
+                value: 'crud'
+            },
+            {
+                name: 'projeto',
                 value: 'crud'
             },
             {
