@@ -21,7 +21,7 @@
           </div>
           <div class="ml-auto text-right">
             <button type="submit" class="btn btn-primary my-2">Add</button>
-            
+
           </div>
         </form>
       </div>

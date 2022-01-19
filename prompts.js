@@ -6,11 +6,11 @@ module.exports = [
         choices: [
             {
                 name: 'crud-vue-js',
-                value: 'crud'
+                value: 'crud-vue-js'
             },
             {
                 name: 'projeto',
-                value: 'crud'
+                value: 'projeto'
             },
             {
                 name: 'Básico',
