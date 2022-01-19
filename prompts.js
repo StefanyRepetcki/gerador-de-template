@@ -5,6 +5,34 @@ module.exports = [
         message: 'Qual template você deseja usar?',
         choices: [
             {
+                name: 'base',
+                value: 'base'
+            },
+            {
+                name: 'blog',
+                value: 'blog'
+            },
+            {
+                name: 'dashboard',
+                value: 'dashboard'
+            },
+            {
+                name: 'freelance',
+                value: 'freelance'
+            },
+            {
+                name: 'parallax',
+                value: 'parallax'
+            },
+            {
+                name: 'vite',
+                value: 'vite'
+            },
+            {
+                name: 'zero',
+                value: 'zero'
+            },
+            {
                 name: 'crud-vue-js',
                 value: 'crud-vue-js'
             },

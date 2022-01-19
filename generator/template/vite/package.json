@@ -1,0 +1,58 @@
+{
+  "name": "vite-theme-free",
+  "version": "1.0.0",
+  "private": true,
+  "author": {
+    "name": "John Leider",
+    "email": "john@vuetifyjs.com"
+  },
+  "scripts": {
+    "serve": "vite preview",
+    "build": "vite build",
+    "lint": "vue-cli-service lint",
+    "dev": "vite"
+  },
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "roboto-fontface": "*",
+    "vue": "^3.2.2",
+    "vuetify": "^3.0.0-alpha.12"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.1.5",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.1.2",
+    "@vuetify/vite-plugin": "^1.0.0-alpha.3",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^7.0.0",
+    "sass": "^1.38.2",
+    "sass-loader": "^10.0.0",
+    "vite": "^2.5.7",
+    "vue-cli-plugin-vuetify": "~2.4.0",
+    "vuetify-loader": "^2.0.0-alpha.8",
+    "webfontloader": "^1.6.28",
+    "webpack": "^5"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/vue3-recommended",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
