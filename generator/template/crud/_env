@@ -1,0 +1,6 @@
+# API
+VUE_APP_URL=https://6091b5e466bcbf001787bcce.mockapi.io/users
+
+# StackDriver
+VUE_APP_STACK_DRIVER_API_KEY=DISABLED
+VUE_APP_ENABLE_STACK_DRIVER=false

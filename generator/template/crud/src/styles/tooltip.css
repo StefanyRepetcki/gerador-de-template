@@ -1,0 +1,46 @@
+/* mover para componentizei */
+
+[data-toggle='tooltip'] {
+  position: relative;
+  display: inline-block;
+}
+
+[data-toggle='tooltip']::before,
+[data-toggle='tooltip']::after {
+  display: none;
+  position: absolute;
+  content: " ";
+  opacity: 0;
+  transition: all .2s linear;
+}
+
+[data-toggle='tooltip']::before {
+  content: attr(data-title);
+  bottom: 30px;
+  left: -12px;
+  width: 220px;
+  background: var(--dark-blue);
+  border-radius: 11px;
+  padding: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+}
+
+[data-toggle='tooltip']::after {
+  border: 8px solid transparent;
+  border-top-color: var(--dark-blue);
+  right: 2px;
+  position: absolute;
+  top: -8px;
+  opacity: 0;
+}
+
+[data-toggle='tooltip']:hover::after,
+[data-toggle='tooltip']:hover::before,
+[data-toggle='tooltip']:focus::after,
+[data-toggle='tooltip']:focus::before {
+  display: block;
+  opacity: 1;
+}

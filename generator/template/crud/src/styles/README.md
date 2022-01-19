@@ -1,0 +1,1 @@
+# avaliar necessidade desse módulo. não deveria importar da componentizei?

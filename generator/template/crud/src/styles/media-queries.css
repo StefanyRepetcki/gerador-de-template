@@ -1,0 +1,7 @@
+@custom-media --mobile screen and (max-width: 768px);
+@custom-media --tablet screen and (min-width: 768px);
+@custom-media --dektop screen and (min-width: 992px);
+@custom-media --large-dektop screen and (min-width: 1200px);
+@custom-media --extra-large-dektop screen and (min-width: 1440px);
+
+
