@@ -1,6 +1,9 @@
 const fs = require('fs');
 
-module.exports = (api, { preset = 'base', ambiente = 'dev-01' }) => {
+module.exports = (api, {
+    preset = 'base',
+    ambiente = 'dev-01'
+}) => {
     api.render(`./template/${preset}`);
 
     api.postProcessFiles(files => {
@@ -32,7 +35,40 @@ module.exports = (api, { preset = 'base', ambiente = 'dev-01' }) => {
     });
 
     switch (preset) {
-        case 'crud-vue-js' :
+        case 'blog':
+            api.extendPackage({
+                dependencies: {
+                    "vue": "^2.6.11",
+                    "vue-router": "^3.1.6",
+                    "vuetify": "^2.2.23",
+                    "vuex": "^3.2.0"
+                },
+                devDependencies: {
+                    "@vue/cli-plugin-babel": "^4.3.1",
+                    "@vue/cli-service": "^4.3.1",
+                    "@vue/eslint-config-standard": "^5.1.2",
+                    "@vue/test-utils": "^1.0.0-beta.33",
+                    "babel-core": "7.0.0-bridge.0",
+                    "babel-eslint": "^10.1.0",
+                    "babel-jest": "^25.4.0",
+                    "eslint": "^6.8.0",
+                    "eslint-config-vuetify": "^0.6.0",
+                    "eslint-plugin-vue": "^6.2.2",
+                    "sass": "^1.26.3",
+                    "sass-loader": "^8.0.2",
+                    "vue-cli-plugin-vuetify": "^0.4.6",
+                    "vue-template-compiler": "^2.6.11",
+                    "vuetify-loader": "^1.4.3"
+                },
+                scripts: {
+                    "deploy": "yarn build && now && now alias",
+                    "serve": "vue-cli-service serve",
+                    "build": "vue-cli-service build",
+                    "lint": "vue-cli-service lint"
+                }
+            });
+            break;
+        case 'crud-vue-js':
             api.extendPackage({
                 dependencies: {
                     "bootstrap": "^4.5.0",
@@ -85,6 +121,155 @@ module.exports = (api, { preset = 'base', ambiente = 'dev-01' }) => {
                     "start": "npm run dev",
                     "build": "node build/build.js"
                 }
+            });
+            break;
+        case 'dashboard':
+            api.extendPackage({
+                dependencies: {
+                    "vue": "^2.6.11",
+                    "vue-meta": "^2.3.3",
+                    "vue-router": "^3.1.6",
+                    "vuetify": "^2.3.13",
+                    "vuex": "^3.4.0",
+                    "vuex-pathify": "^1.4.1",
+                    "vuex-router-sync": "^5.0.0"
+                },
+                devDependencies: {
+                    "@babel/core": "^7.9.0",
+                    "@vue/cli-plugin-babel": "^4.3.1",
+                    "@vue/cli-plugin-eslint": "^4.3.1",
+                    "@vue/cli-plugin-router": "~4.3.1",
+                    "@vue/cli-plugin-vuex": "~4.4.0",
+                    "@vue/cli-service": "^4.3.1",
+                    "@vue/eslint-config-standard": "^5.1.2",
+                    "@vuetify/vue-cli-plugin-preset-base": "~0.3.2",
+                    "archiver": "^4.0.1",
+                    "babel-core": "7.0.0-bridge.0",
+                    "babel-eslint": "^10.1.0",
+                    "dotenv": "^8.2.0",
+                    "eslint": "^6.8.0",
+                    "eslint-config-standard": "^14.1.1",
+                    "eslint-config-vuetify": "^0.6.0",
+                    "eslint-plugin-import": "^2.20.2",
+                    "eslint-plugin-node": "^11.1.0",
+                    "eslint-plugin-promise": "^4.2.1",
+                    "eslint-plugin-standard": "^4.0.1",
+                    "eslint-plugin-vue": "^6.2.2",
+                    "eslint-plugin-vuetify": "^1.0.0-beta.8",
+                    "lodash": "^4.17.15",
+                    "open": "^7.0.3",
+                    "sass": "^1.26.5",
+                    "sass-loader": "^8.0.2",
+                    "shelljs": "^0.8.4",
+                    "vue-chartist": "^2.3.1",
+                    "vue-cli-plugin-vuetify": "^2.0.5",
+                    "vue-template-compiler": "^2.6.11",
+                    "vuetify-loader": "^1.4.3",
+                    "webfontloader": "^1.6.28",
+                    "webpack": "^4.43.0"
+                },
+                scripts: {
+                    "serve": "vue-cli-service serve",
+                    "dev": "yarn serve",
+                    "build": "vue-cli-service build",
+                    "lint": "vue-cli-service lint",
+                    "postversion": "node scripts/postversion.js"
+                }
+            });
+            break;
+        case 'freelance':
+            api.extendPackage({
+                dependencies: {
+                    "vue": "^2.6.11",
+                    "vuetify": "^2.2.25"
+                },
+                devDependencies: {
+                    "@babel/core": "^7.9.0",
+                    "@vue/cli-plugin-babel": "^4.3.1",
+                    "@vue/cli-plugin-eslint": "^4.3.1",
+                    "@vue/cli-service": "^4.3.1",
+                    "@vue/eslint-config-standard": "^5.1.2",
+                    "@vue/test-utils": "^1.0.0-beta.33",
+                    "archiver": "^4.0.1",
+                    "babel-core": "7.0.0-bridge.0",
+                    "babel-eslint": "^10.1.0",
+                    "babel-jest": "^25.4.0",
+                    "dotenv": "^8.2.0",
+                    "eslint": "^6.8.0",
+                    "eslint-config-standard": "^14.1.1",
+                    "eslint-config-vuetify": "^0.6.0",
+                    "eslint-plugin-import": "^2.20.2",
+                    "eslint-plugin-node": "^11.1.0",
+                    "eslint-plugin-promise": "^4.2.1",
+                    "eslint-plugin-standard": "^4.0.1",
+                    "eslint-plugin-vue": "^6.2.2",
+                    "open": "^7.0.3",
+                    "sass": "^1.26.5",
+                    "sass-loader": "^8.0.2",
+                    "shelljs": "^0.8.4",
+                    "vue-cli-plugin-vuetify": "^2.0.5",
+                    "vue-template-compiler": "^2.6.11",
+                    "vuetify-loader": "^1.4.3",
+                    "webpack": "^4.43.0"
+                },
+                scripts: {
+                    "serve": "vue-cli-service serve",
+                    "build": "vue-cli-service build",
+                    "lint": "vue-cli-service lint"
+                }
+            });
+            break;
+        case 'vite':
+            api.extendPackage({
+                dependencies: {
+                    "core-js": "^3.6.5",
+                    "roboto-fontface": "*",
+                    "vue": "^3.2.2",
+                    "vuetify": "^3.0.0-alpha.12"
+                },
+                devDependencies: {
+                    "@vitejs/plugin-vue": "^1.1.5",
+                    "@vue/cli-plugin-babel": "~4.5.0",
+                    "@vue/cli-plugin-eslint": "~4.5.0",
+                    "@vue/cli-service": "~4.5.0",
+                    "@vue/compiler-sfc": "^3.1.2",
+                    "@vuetify/vite-plugin": "^1.0.0-alpha.3",
+                    "babel-eslint": "^10.1.0",
+                    "eslint": "^6.7.2",
+                    "eslint-plugin-vue": "^7.0.0",
+                    "sass": "^1.38.2",
+                    "sass-loader": "^10.0.0",
+                    "vite": "^2.5.7",
+                    "vue-cli-plugin-vuetify": "~2.4.0",
+                    "vuetify-loader": "^2.0.0-alpha.8",
+                    "webfontloader": "^1.6.28",
+                    "webpack": "^5"
+                },
+                scripts: {
+                    "serve": "vite preview",
+                    "build": "vite build",
+                    "lint": "vue-cli-service lint",
+                    "dev": "vite"
+                },
+                eslintConfig: {
+                    "root": true,
+                    "env": {
+                        "node": true
+                    },
+                    "extends": [
+                        "plugin:vue/vue3-recommended",
+                        "eslint:recommended"
+                    ],
+                    "parserOptions": {
+                        "parser": "babel-eslint"
+                    },
+                    "rules": {}
+                },
+                browserslist: [
+                    "> 1%",
+                    "last 2 versions",
+                    "not dead"
+                ]
             });
             break;
         case 'projeto':
@@ -140,6 +325,55 @@ module.exports = (api, { preset = 'base', ambiente = 'dev-01' }) => {
                     "test:unit": "vue-cli-service test:unit --passWithNoTests",
                     "test:watch": "vue-cli-service test:unit --watch",
                     "lint": "vue-cli-service lint",
+                }
+            });
+            break;
+        case 'zero':
+            api.extendPackage({
+                dependencies: {
+                    "vue": "^2.6.14",
+                    "vue-meta": "^2.4.0",
+                    "vue-router": "^3.5.2",
+                    "vuetify": "^2.5.8"
+                },
+                devDependencies: {
+                    "@babel/core": "^7.15.4",
+                    "@vue/cli-plugin-babel": "^4.5.13",
+                    "@vue/cli-plugin-eslint": "^4.5.13",
+                    "@vue/cli-plugin-router": "~4.5.13",
+                    "@vue/cli-service": "^4.5.13",
+                    "@vue/eslint-config-standard": "^6.1.0",
+                    "@vuetify/vue-cli-plugin-preset-base": "~0.3.2",
+                    "archiver": "^5.3.0",
+                    "babel-core": "7.0.0-bridge.0",
+                    "babel-eslint": "^10.1.0",
+                    "dotenv": "^8.2.0",
+                    "eslint": "^6.8.0",
+                    "eslint-config-standard": "^16.0.2",
+                    "eslint-config-vuetify": "^0.6.1",
+                    "eslint-plugin-import": "^2.22.1",
+                    "eslint-plugin-node": "^11.1.0",
+                    "eslint-plugin-promise": "^4.3.1",
+                    "eslint-plugin-standard": "^5.0.0",
+                    "eslint-plugin-vue": "^7.9.0",
+                    "eslint-plugin-vuetify": "^1.0.0-beta.7",
+                    "lodash": "^4.17.21",
+                    "open": "^7.0.3",
+                    "sass": "~1.32.0",
+                    "sass-loader": "^10.0.0",
+                    "shelljs": "^0.8.4",
+                    "vue-cli-plugin-vuetify": "~2.4.2",
+                    "vue-template-compiler": "^2.6.14",
+                    "vuetify-loader": "^1.7.3",
+                    "webfontloader": "^1.6.28",
+                    "webpack": "^5.52.0"
+                },
+                scripts: {
+                    "serve": "vue-cli-service serve",
+                    "dev": "yarn serve",
+                    "build": "vue-cli-service build",
+                    "lint": "vue-cli-service lint",
+                    "postversion": "node scripts/postversion.js"
                 }
             });
             break;
