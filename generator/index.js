@@ -184,6 +184,7 @@ module.exports = (api, {
                     "vuetify": "^2.2.25"
                 },
                 devDependencies: {
+                    "@vue/babel-preset-app": "^4.5.15",
                     "@babel/core": "^7.9.0",
                     "@vue/cli-plugin-babel": "^4.3.1",
                     "@vue/cli-plugin-eslint": "^4.3.1",
